@@ -1,0 +1,12 @@
+series,diagonal,type,screen type,model,country,price
+SM-S908BZGHSEK,none,Telephone,AMOLED,Samsung,none,61099
+iPhone-13,none,Telephone,OLED,Apple,none,54999
+ZS671KS,none,Telephone,AMOLED,ASUS,none,39245
+Pixel-5,none,Telephone,OLED,Google,none,34628
+Reno-6,none,Telephone,AMOLED,OPPO,none,24199
+TCL-65X10 ,65,Television,VA,none,China,122668
+55U740LB ,55,Television,LED,none,China,20999
+T-47WL968G,47,Television,LED,none,Japan,57277
+LG-OLED65A16LA,65,Television,OLED,none,Poland,85999
+LG-65QNED,65,Television,LED,none,Poland,103999
+LG-65QNED,,Television,Poland,103999,,,
