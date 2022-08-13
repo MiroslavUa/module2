@@ -1,5 +1,6 @@
 package module.service;
 
+import module.model.Customer;
 import module.model.invoice.Invoice;
 import module.model.invoice.InvoiceType;
 import module.model.product.Product;
@@ -21,6 +22,10 @@ public class ShopStatistics {
             instance = new ShopStatistics();
         }
         return instance;
+    }
+
+    public List<Invoice> getInvoices() {
+        return invoices;
     }
 
     public long soldTelevisions() {

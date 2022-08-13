@@ -35,7 +35,7 @@ class ProductParserTest {
         Assertions.assertEquals(4, target.getInfo().size());
         for(List<String> lists : info) {
             for(String s : lists){
-                Assertions.assertEquals(s,"*ERROR*");
+                Assertions.assertEquals(s, "ERROR");
             }
         }
     }

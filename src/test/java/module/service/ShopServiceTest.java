@@ -37,9 +37,16 @@ class ShopServiceTest {
         invoice = Mockito.mock(Invoice.class);
 
         isWholesale = Mockito.mock(Predicate.class);
-
+        try{
+            Field[] fields = Invoice.class.getDeclaredFields();
+            Field isWholesaleField = fields[0];
+            isWholesaleField.setAccessible(true);
+            isWholesaleField.set(isWholesaleField, isWholesale);
+        }
+        catch(Exception e){
+            System.out.println("Reflection error: " + e.getMessage());
+        }
         Mockito.when(isWholesale.test(any())).thenReturn(true);
-        Invoice.setSalePredicate();
 
         telephone = new Telephone("PhoneA", ScreenType.LED, 10d, "ModelA");
         television = new Television("TelevisonA", ScreenType.AMOLED, 20d, 42d, "Japan");
@@ -61,5 +68,15 @@ class ShopServiceTest {
     public void makeOrdersPositive(){
         target.makeOrders("correctLines.csv", 10, 5);
         Assertions.assertEquals(10, target.getInvoices().size());
+    }
+
+    @Test
+    public void makeOrdersNegative(){
+        target.makeOrders("wrongLines.csv", 10, 5);
+        double products = target.getInvoices().stream()
+                        .mapToLong(i -> i.getProducts().size())
+                        .sum();
+
+        Assertions.assertEquals(0, products);
     }
 }
