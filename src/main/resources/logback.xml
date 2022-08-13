@@ -1,0 +1,51 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{66} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <property name = "warning" value = "logs/warning.log"/>
+    <property name = "info" value = "logs/info.log"/>
+
+    <appender name="warn-logger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${warning}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/warn-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>100GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{66} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="info-logger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${info}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/info-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>100GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{HH:mm:ss}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="WARNING" level="WARN" additivity="true">
+        <appender-ref ref="warn-logger"/>
+        <!--<appender-ref ref="STDOUT"/>-->
+    </logger>
+
+    <logger name="INFO" level="INFO" additivity="true">
+        <appender-ref ref="info-logger"/>
+    </logger>
+
+
+    <!--<root level="OFF">
+        #<appender-ref ref="STDOUT" />
+    #</root>-->
+
+</configuration>

@@ -1,8 +1,8 @@
-package model.invoice;
+package module.model.invoice;
 
-import model.Customer;
-import model.product.Product;
-import util.UserInputUtil;
+import module.model.Customer;
+import module.model.product.Product;
+import module.util.UserInputUtil;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -32,13 +32,13 @@ public class Invoice {
     public static void setSalePredicate() {
         final double limit;
         try {
-            System.out.println("Enter limit for wholesale invoice: ");
+            System.out.print("Enter limit for wholesale invoice: ");
             limit = UserInputUtil.doubleValue();
             isWholesale = invoice -> invoice.getProducts().stream()
                     .map(Product::getPrice)
                     .reduce(0d, Double::sum) > limit;
         } catch (IOException | NumberFormatException ex) {
-            System.out.println(ex.getMessage()); //TODO send this message to log file
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -103,5 +103,15 @@ public class Invoice {
     @Override
     public int hashCode() {
         return Objects.hash(getProducts(), getCustomer(), getType(), getDate());
+    }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "products=" + products.size() +
+                ", customer=" + customer +
+                ", type=" + type +
+                ", date=" + date +
+                '}';
     }
 }

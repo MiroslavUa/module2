@@ -1,4 +1,4 @@
-package model.product;
+package module.model.product;
 
 import java.util.Objects;
 
@@ -33,7 +33,7 @@ public class Telephone extends Product{
     @Override
     public String toString() {
         return "Telephone{" +
-                "model='" + model + '\'' +
+                "module.model='" + model + '\'' +
                 ", series='" + series + '\'' +
                 ", screenType=" + screenType +
                 ", price=" + price +

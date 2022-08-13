@@ -1,4 +1,4 @@
-package model.product;
+package module.model.product;
 
 public abstract class Product {
     protected String series;

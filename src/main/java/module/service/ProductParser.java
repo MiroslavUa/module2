@@ -1,4 +1,4 @@
-package service;
+package module.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,7 +44,7 @@ public class ProductParser {
                 }
             }
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());//TODO send this message to log file
+            System.out.println(ex.getMessage());
         }
         this.info = info;
     }

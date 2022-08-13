@@ -1,4 +1,4 @@
-package model.product;
+package module.model.product;
 
 import java.util.Objects;
 
@@ -31,8 +31,7 @@ public class Television extends Product{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Television)) return false;
-        Television that = (Television) o;
+        if (!(o instanceof Television that)) return false;
         return Double.compare(that.getDiagonal(), getDiagonal()) == 0 && getCountry().equals(that.getCountry());
     }
 
