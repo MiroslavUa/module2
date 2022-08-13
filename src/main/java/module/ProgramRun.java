@@ -4,7 +4,6 @@ import module.model.invoice.Invoice;
 import module.model.product.Product;
 import module.service.ShopService;
 import module.service.ShopStatistics;
-
 import java.util.List;
 
 public class ProgramRun {

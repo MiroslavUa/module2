@@ -3,7 +3,6 @@ package module.model.invoice;
 import module.model.Customer;
 import module.model.product.Product;
 import module.util.UserInputUtil;
-
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

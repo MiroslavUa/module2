@@ -5,17 +5,13 @@ import module.model.invoice.Invoice;
 import module.model.product.ScreenType;
 import module.model.product.Telephone;
 import module.model.product.Television;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.regex.Matcher;
-
 import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;

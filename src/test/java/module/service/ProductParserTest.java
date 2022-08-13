@@ -4,8 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-
 import java.util.List;
 
 class ProductParserTest {
@@ -35,7 +33,7 @@ class ProductParserTest {
         Assertions.assertEquals(4, target.getInfo().size());
         for(List<String> lists : info) {
             for(String s : lists){
-                Assertions.assertEquals(s, "ERROR");
+                Assertions.assertTrue(s.contains("ERROR"));
             }
         }
     }

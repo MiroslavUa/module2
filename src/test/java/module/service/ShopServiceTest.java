@@ -9,11 +9,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.function.Predicate;
-
 import static org.mockito.ArgumentMatchers.any;
 
 class ShopServiceTest {

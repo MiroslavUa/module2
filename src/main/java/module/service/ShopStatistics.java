@@ -1,10 +1,8 @@
 package module.service;
 
-import module.model.Customer;
 import module.model.invoice.Invoice;
 import module.model.invoice.InvoiceType;
 import module.model.product.Product;
-
 import java.util.*;
 import java.util.function.Predicate;
 
